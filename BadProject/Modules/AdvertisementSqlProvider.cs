@@ -1,8 +1,9 @@
 ﻿namespace BadProject.Modules
 {
+	using BadProject.Modules.Interfaces;
 	using ThirdParty;
 
-	public class AdvertisementSqlProvider
+	public class AdvertisementSqlProvider : IAdvertisement
 	{
 		public Advertisement GetAdvertisement(string id)
 		{

@@ -8,8 +8,9 @@
 	using ThirdParty;
 
 	using BadProject.Infrastructure;
+	using BadProject.Modules.Interfaces;
 
-	public class AdvertisementNoSqlProvider
+	public class AdvertisementNoSqlProvider : IAdvertisement
 	{
 		private readonly NoSqlAdvProvider noSqlAdvProvider;
 		private readonly ApplicationSettings applicationSettings;

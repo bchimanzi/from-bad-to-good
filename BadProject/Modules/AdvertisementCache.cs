@@ -6,8 +6,9 @@
 
 	using ThirdParty;
 	using BadProject.Infrastructure;
+	using BadProject.Modules.Interfaces;
 
-	public class AdvertisementCache
+	public class AdvertisementCache : IAdvertisement, IAdvertisementCache
 	{
 		private readonly IMemoryCache cache;
 		private readonly CacheSettings cacheSettings;
