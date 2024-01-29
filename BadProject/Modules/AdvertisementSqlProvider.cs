@@ -5,6 +5,8 @@
 
 	public class AdvertisementSqlProvider : IAdvertisement
 	{
+		#region Methods
+
 		public Advertisement GetAdvertisement(string id)
 		{
 			if (string.IsNullOrEmpty(value: id))
@@ -16,5 +18,7 @@
 
 			return advertisement;
 		}
+
+		#endregion Methods
 	}
 }

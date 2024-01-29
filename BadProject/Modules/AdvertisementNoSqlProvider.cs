@@ -12,10 +12,16 @@
 
 	public class AdvertisementNoSqlProvider : IAdvertisement
 	{
+		#region Fields
+
 		private readonly NoSqlAdvProvider noSqlAdvProvider;
 		private readonly ApplicationSettings applicationSettings;
 		private static Queue<DateTime> errors = new Queue<DateTime>();
 		private readonly object lockObj = new object();
+
+		#endregion Fields
+
+		#region Constructor
 
 		public AdvertisementNoSqlProvider(
 			IOptions<ApplicationSettings> applicationSettings, NoSqlAdvProvider noSqlAdvProvider)
@@ -23,6 +29,11 @@
 			this.applicationSettings = applicationSettings.Value;
 			this.noSqlAdvProvider = noSqlAdvProvider;
 		}
+
+		#endregion Constructor
+
+		#region Methods
+
 		public Advertisement GetAdvertisement(string id)
 		{
 			if (string.IsNullOrEmpty(value: id))
@@ -63,6 +74,10 @@
 			return advertisement;
 		}
 
+		#endregion Methods
+
+		#region Private Methods
+
 		private void TidyErrorQueue()
 		{
 			while (errors.Count > this.applicationSettings.MinimumQueueTidyCount)
@@ -85,5 +100,8 @@
 
 			return errorCount;
 		}
+
+		#endregion Private Methods
+
 	}
 }

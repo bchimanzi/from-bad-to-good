@@ -1,7 +1,11 @@
 ﻿namespace BadProject.Infrastructure
 {
 	public class CacheSettings
-	{ 
-		public int MinutesToLive { get; set; }	
+	{
+		#region Properties
+
+		public int MinutesToLive { get; set; }
+
+		#endregion Properties
 	}
 }

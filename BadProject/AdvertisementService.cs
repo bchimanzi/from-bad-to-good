@@ -7,9 +7,15 @@ namespace Adv
 {
 	public class AdvertisementService
 	{
+		#region Fields
+
 		private readonly AdvertisementCache advertisementCache;
 		private readonly AdvertisementSqlProvider advertisementSqlProvider;
 		private readonly AdvertisementNoSqlProvider advertisementNoSqlProvider;
+
+		#endregion Fields
+
+		#region Constructor
 
 		public AdvertisementService(
 			AdvertisementCache advertisementCache,
@@ -20,6 +26,9 @@ namespace Adv
 			this.advertisementSqlProvider = advertisementSqlProvider;
 			this.advertisementNoSqlProvider = advertisementNoSqlProvider;
 		}
+
+		#endregion Constructor
+
 		// **************************************************************************************************
 		// Loads Advertisement information by id
 		// from cache or if not possible uses the "mainProvider" or if not possible uses the "backupProvider"
@@ -34,14 +43,17 @@ namespace Adv
 		//
 		// 3. If it can't retrive the data or the ErrorCount in the last hour is more than 10, 
 		//    it uses the SqlDataProvider (backupProvider)
+
+		#region Methods
+
 		public Advertisement GetAdvertisement(string id)
 		{
-			Advertisement advertisement = null;		
+			Advertisement advertisement = null;
 
 			// Use Cache if available
 			advertisement = this.advertisementCache.GetAdvertisement(id: id);
 
-			if (advertisement == null) 
+			if (advertisement == null)
 			{
 				// Use NoSql available
 				advertisement = this.advertisementNoSqlProvider.GetAdvertisement(id: id);
@@ -61,6 +73,8 @@ namespace Adv
 
 			return advertisement;
 		}
+
+		#endregion Methods
 
 
 	}

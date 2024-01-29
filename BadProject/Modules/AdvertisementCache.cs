@@ -10,15 +10,27 @@
 
 	public class AdvertisementCache : IAdvertisement, IAdvertisementCache
 	{
+
+		#region Fields
+
 		private readonly IMemoryCache cache;
 		private readonly CacheSettings cacheSettings;
+
+		#endregion Fields
+
+		#region Constructor
+
 		public AdvertisementCache(
-		IMemoryCache cache,
-		IOptions<CacheSettings> cacheSettings)
+				IMemoryCache cache,
+				IOptions<CacheSettings> cacheSettings)
 		{
 			this.cache = cache;
 			this.cacheSettings = cacheSettings.Value;
 		}
+
+		#endregion Constructor
+
+		#region Methods
 
 		public Advertisement GetAdvertisement(string id)
 		{
@@ -41,5 +53,7 @@
 
 			cache.Set($"AdvKey_{id}", advertisement, DateTimeOffset.Now.AddMinutes(cacheSettings.MinutesToLive));
 		}
+
+		#endregion Methods
 	}
 }

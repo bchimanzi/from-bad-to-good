@@ -3,7 +3,7 @@
 	using ThirdParty;
 
 	public interface IAdvertisementCache
-	  {
-      void SetAdvertisement(string id, Advertisement advertisement);
-		}
+	{
+		void SetAdvertisement(string id, Advertisement advertisement);
+	}
 }
