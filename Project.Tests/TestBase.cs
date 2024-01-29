@@ -59,7 +59,7 @@
 			serviceCollection.Configure<CacheSettings>(configuration.GetSection("CacheSettings"));
 			serviceCollection.AddMemoryCache();
 			serviceCollection.AddTransient<NoSqlAdvProvider>();
-			serviceCollection.AddTransient<AdvertisementCache>();
+			serviceCollection.AddSingleton<AdvertisementCache>();
 			serviceCollection.AddTransient<AdvertisementSqlProvider>();
 			serviceCollection.AddTransient<AdvertisementNoSqlProvider>();
 			serviceCollection.AddTransient<AdvertisementService>();
