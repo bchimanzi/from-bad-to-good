@@ -2,7 +2,7 @@
 {
 	using ThirdParty;
 
-	public interface IAdvertisementCache
+	public interface IAdvertisementCacheProvider
 	{
 		void SetAdvertisement(string id, Advertisement advertisement);
 	}

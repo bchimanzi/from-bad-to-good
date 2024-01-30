@@ -3,7 +3,7 @@
 	using BadProject.Modules.Interfaces;
 	using ThirdParty;
 
-	public class AdvertisementSqlProvider : IAdvertisement
+	public class AdvertisementSqlProvider : IAdvertisementProvider
 	{
 		#region Methods
 

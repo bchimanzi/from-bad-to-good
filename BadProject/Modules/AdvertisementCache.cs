@@ -8,7 +8,7 @@
 	using BadProject.Infrastructure;
 	using BadProject.Modules.Interfaces;
 
-	public class AdvertisementCache : IAdvertisement, IAdvertisementCache
+	public class AdvertisementCache : IAdvertisementProvider, IAdvertisementCacheProvider
 	{
 
 		#region Fields

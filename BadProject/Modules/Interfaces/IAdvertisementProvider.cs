@@ -2,7 +2,7 @@
 {
 	using ThirdParty;
 
-	public interface IAdvertisement
+	public interface IAdvertisementProvider
 	{
 		Advertisement GetAdvertisement(string id);
 	}

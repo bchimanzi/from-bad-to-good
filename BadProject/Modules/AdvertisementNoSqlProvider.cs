@@ -10,7 +10,7 @@
 	using BadProject.Infrastructure;
 	using BadProject.Modules.Interfaces;
 
-	public class AdvertisementNoSqlProvider : IAdvertisement
+	public class AdvertisementNoSqlProvider : IAdvertisementProvider
 	{
 		#region Fields
 
